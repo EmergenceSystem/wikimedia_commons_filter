@@ -1,0 +1,11 @@
+{application, wikimedia_commons_filter, [
+    {description, "em_filter agent for Wikimedia Commons image/audio/video search"},
+    {vsn, "0.1.0"},
+    {registered, [wikimedia_commons_filter_sup, wikimedia_commons_filter_server]},
+    {mod, {wikimedia_commons_filter_app, []}},
+    {applications, [kernel, stdlib, ssl, inets, cowboy, em_filter]},
+    {env, [{pop_port, 0}, {query_port, 0}, {pop_seeds, []}]},
+    {modules, [wikimedia_commons_filter_sup, wikimedia_commons_filter_server]},
+    {licenses, ["Apache-2.0"]},
+    {links, [{"GitHub", "https://github.com/EmergenceSystem/wikimedia_commons_filter"}]}
+]}.
